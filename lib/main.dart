@@ -28,10 +28,20 @@ class _AudioAppState extends State<AudioApp> {
       backgroundColor: Color.fromARGB(150, 240, 200, 150),
       body: SafeArea(
         child: Center(
-          child: TextButton(
-            onPressed: () {},
+          child: Container(
+            width: 150,
+            height: 150,
             child: Card(
-              child: Text('Hiiii'),
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Hiiii',
+                  style: TextStyle(
+                    color: Colors.black54,
+                    fontSize: 35,
+                  ),
+                ),
+              ),
             ),
           ),
         ),
