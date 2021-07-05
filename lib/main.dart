@@ -27,14 +27,14 @@ class _AudioAppState extends State<AudioApp> {
     player.play('assets_note$filenum.wav');
   }
 
-  Expanded widgetcontainer({required Color color, required int notenum}) {
+  Expanded widgetcontainer({required Color colour, required int notenum}) {
     return Expanded(
       child: TextButton(
         onPressed: () {
           playsound(notenum);
         },
         child: Container(
-          color: color,
+          color: colour,
         ),
       ),
     );
@@ -48,13 +48,13 @@ class _AudioAppState extends State<AudioApp> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            widgetcontainer(color: Colors.amberAccent, notenum: 1),
-            widgetcontainer(color: Colors.redAccent, notenum: 2),
-            widgetcontainer(color: Colors.blueAccent, notenum: 3),
-            widgetcontainer(color: Colors.greenAccent, notenum: 4),
-            widgetcontainer(color: Colors.pinkAccent, notenum: 5),
-            widgetcontainer(color: Colors.white, notenum: 6),
-            widgetcontainer(color: Colors.indigoAccent, notenum: 7),
+            widgetcontainer(colour: Colors.amberAccent, notenum: 1),
+            widgetcontainer(colour: Colors.redAccent, notenum: 2),
+            widgetcontainer(colour: Colors.blueAccent, notenum: 3),
+            widgetcontainer(colour: Colors.greenAccent, notenum: 4),
+            widgetcontainer(colour: Colors.pinkAccent, notenum: 5),
+            widgetcontainer(colour: Colors.white, notenum: 6),
+            widgetcontainer(colour: Colors.indigoAccent, notenum: 7),
           ],
         ),
       ),
