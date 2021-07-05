@@ -22,140 +22,39 @@ class AudioApp extends StatefulWidget {
 }
 
 class _AudioAppState extends State<AudioApp> {
+  void playsound(int filenum) {
+    final player = AudioCache();
+    player.play('assets_note$filenum.wav');
+  }
+
+  Expanded widgetcontainer({required Color color, required int notenum}) {
+    return Expanded(
+      child: TextButton(
+        onPressed: () {
+          playsound(notenum);
+        },
+        child: Container(
+          color: color,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(150, 240, 200, 150),
+      backgroundColor: Color.fromARGB(255, 0, 0, 0),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded(
-              child: Container(
-                color: Colors.amberAccent,
-                child: TextButton(
-                  onPressed: () {
-                    final player = AudioCache();
-                    player.play('assets_note1.wav');
-                  },
-                  child: Text(
-                    '1',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 35,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.redAccent,
-                child: TextButton(
-                  onPressed: () {
-                    final player = AudioCache();
-                    player.play('assets_note2.wav');
-                  },
-                  child: Text(
-                    '2',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 35,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.blueAccent,
-                child: TextButton(
-                  onPressed: () {
-                    final player = AudioCache();
-                    player.play('assets_note3.wav');
-                  },
-                  child: Text(
-                    '3',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 35,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.greenAccent,
-                child: TextButton(
-                  onPressed: () {
-                    final player = AudioCache();
-                    player.play('assets_note4.wav');
-                  },
-                  child: Text(
-                    '4',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 35,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.pinkAccent,
-                child: TextButton(
-                  onPressed: () {
-                    final player = AudioCache();
-                    player.play('assets_note5.wav');
-                  },
-                  child: Text(
-                    '5',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 35,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.white,
-                child: TextButton(
-                  onPressed: () {
-                    final player = AudioCache();
-                    player.play('assets_note6.wav');
-                  },
-                  child: Text(
-                    '6',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 35,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.indigoAccent,
-                child: TextButton(
-                  onPressed: () {
-                    final player = AudioCache();
-                    player.play('assets_note7.wav');
-                  },
-                  child: Text(
-                    '7',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 35,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            widgetcontainer(color: Colors.amberAccent, notenum: 1),
+            widgetcontainer(color: Colors.redAccent, notenum: 2),
+            widgetcontainer(color: Colors.blueAccent, notenum: 3),
+            widgetcontainer(color: Colors.greenAccent, notenum: 4),
+            widgetcontainer(color: Colors.pinkAccent, notenum: 5),
+            widgetcontainer(color: Colors.white, notenum: 6),
+            widgetcontainer(color: Colors.indigoAccent, notenum: 7),
           ],
         ),
       ),
